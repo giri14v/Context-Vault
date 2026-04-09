@@ -21,7 +21,10 @@ A Chrome extension for context-aware bookmarking with smart reminders.
 ### Backend
 
 cd backend
+
 pip install -r requirements.txt
+
+
 python manage.py runserver
 
 
