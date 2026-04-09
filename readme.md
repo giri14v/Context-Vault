@@ -24,9 +24,4 @@ cd backend
 pip install -r requirements.txt
 python manage.py runserver
 
-### Extension
 
-1. Go to chrome://extensions/
-2. Enable Developer Mode
-3. Click "Load Unpacked"
-4. Select extension folder
