@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ContextVault</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ── Header ── -->
+  <div class="header">
+    <div class="dot"></div>
+    <h1>ContextVault</h1>
+  </div>
+
+  <!-- ── Login screen ── -->
+  <div id="screen-login" class="screen active">
+    <label>Username</label>
+    <input type="text" id="login-username" />
+
+    <label>Password</label>
+    <input type="password" id="login-password" />
+
+    <button class="btn btn-primary" id="btn-login">Log in</button>
+    <div id="login-status" class="status"></div>
+  </div>
+
+  <!-- ── Save / Edit screen ── -->
+  <div id="screen-save" class="screen">
+
+    <label>URL</label>
+    <input type="url" id="save-url" readonly />
+
+    <label>Title</label>
+    <input type="text" id="save-title" />
+
+    <label>Notes</label>
+    <textarea id="save-notes"></textarea>
+
+    <label>Context</label>
+    <div id="context-list" class="context-list"></div>
+
+    <label>Remind me at</label>
+    <input type="datetime-local" id="save-remind-at" />
+
+    <label>Repeat count</label>
+    <input type="number" id="repeat-count" min="0" />
+
+    <label>Repeat interval (minutes)</label>
+    <small>Recommended ≥ 2 minutes</small>
+    <input type="number" id="repeat-interval" min="0" />
+
+    <button class="btn btn-primary" id="btn-save">Save bookmark</button>
+    <div id="save-status" class="status"></div>
+
+    <div class="footer">
+      <span id="footer-user"></span>
+      <a id="btn-view-bookmarks">My Bookmarks</a>
+      <a id="btn-logout">Log out</a>
+    </div>
+  </div>
+
+  <!-- ── Bookmark List screen ── -->
+  <div id="screen-list" class="screen">
+    <label>Search</label>
+    <input type="text" id="search-input" />
+    <small> * Click a bookmark to get redirected</small>
+
+    <div id="bookmark-list">
+      
+    </div>
+
+    <button class="btn btn-secondary" id="btn-back">Back</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

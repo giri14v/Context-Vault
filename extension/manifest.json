@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "ContextVault",
+  "version": "1.0",
+  "description": "Context-aware bookmarking with smart reminders",
+
+  "permissions": ["activeTab", "storage", "notifications", "alarms"],
+  "host_permissions": ["http://localhost:8000/*"],
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "icons": {
+    "128": "icon.png"
+  }
+}

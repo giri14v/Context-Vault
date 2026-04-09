@@ -1,0 +1,320 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 340px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #1a1a1a;
+    background: #ffffff;
+}
+
+/* ── Header ── */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.header h1 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.header .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6c5ce7;
+}
+
+/* ── Screens ── */
+.screen {
+    display: none;
+    padding: 16px;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* ── Form elements ── */
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 4px;
+    margin-top: 12px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="datetime-local"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #1a1a1a;
+    background: #fafafa;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #6c5ce7;
+    background: #fff;
+}
+
+textarea {
+    resize: none;
+    height: 60px;
+    line-height: 1.5;
+}
+
+/* ── Context chips ── */
+.context-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.chip {
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #444;
+    transition: all 0.15s;
+    user-select: none;
+}
+
+.chip.selected {
+    background: #6c5ce7;
+    border-color: #6c5ce7;
+    color: #fff;
+}
+
+/* ── Buttons ── */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 9px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.btn:hover {
+    opacity: 0.78;
+}
+
+.btn-primary {
+    background: #6c5ce7;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+    margin-top: 8px;
+}
+
+.btn-danger {
+    background: #fff0f0;
+    color: #c0392b;
+    border: 1px solid #f5c6c6;
+    margin-top: 8px;
+}
+
+/* ── Status messages ── */
+.status {
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    display: none;
+}
+
+.status.success {
+    background: #eafaf1;
+    color: #1e8449;
+    display: block;
+}
+
+.status.error {
+    background: #fdf2f2;
+    color: #c0392b;
+    display: block;
+}
+
+/* ── Footer ── */
+.footer {
+    padding: 10px 16px;
+    border-top: 1px solid #ebebeb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer span {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.footer a {
+    font-size: 11px;
+    color: #6c5ce7;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ── Bookmark Item (Card Style) ── */
+.bookmark-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 10px 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fafafa;
+
+    transition: all 0.15s ease;
+}
+
+/* Hover effect */
+.bookmark-item:hover {
+    border-color: #dcdcdc;
+    background: #fff;
+}
+
+/* Left section (text content) */
+.bookmark-item>div:first-child {
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Title */
+.bookmark-item strong {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+
+    display: block;
+    margin-bottom: 2px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* URL */
+.bookmark-item small {
+    display: block;
+    font-size: 11px;
+    color: #666;
+
+    margin-bottom: 2px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Notes */
+.bookmark-item small:last-child {
+    color: #333;
+    font-size: 12px;
+}
+
+/* Right section (buttons) */
+.bookmark-item>div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Override default .btn for compact buttons */
+.bookmark-item .btn {
+    width: auto;
+    padding: 5px 8px;
+    font-size: 11px;
+    margin-top: 0;
+}
+
+/* Edit button */
+.edit-btn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+/* Delete button */
+.delete-btn {
+    background: #fff0f0;
+    color: #c0392b;
+    border: 1px solid #f5c6c6;
+}
+
+/* ── Search Input ── */
+#search-input {
+    margin-top: 6px;
+    margin-bottom: 12px;
+
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+
+    font-size: 13px;
+    background: #fafafa;
+
+    transition: all 0.15s ease;
+}
+
+/* Focus state */
+#search-input:focus {
+    border-color: #6c5ce7;
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.08);
+}
+
+/* Placeholder styling */
+#search-input::placeholder {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.bookmark-content {
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.bookmark-content:hover {
+    opacity: 0.75;
+}
